@@ -18,42 +18,47 @@
 
   <script>
     const app = document.querySelector('#app');
-    app.innerHTML = `
-      <div class="container">
-        <div class="card mt-5">
-          <div class="card-body">
-            <div class="mb-3">
-              <label for="name" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="name">
+
+    function showForm() {
+      const formCadastro = `
+        <div class="container">
+          <div class="card mt-5">
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="mb-3">
+                <label for="age" class="form-label">Idade</label>
+                <input type="text" class="form-control" id="age">
+              </div>
+              <div class="mb-3">
+                <label for="profession" class="form-label">Profissão</label>
+                <input type="text" class="form-control" id="profession">
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Endereço</label>
+                <input type="text" class="form-control" id="address">
+              </div>
+              <div class="mb-3">
+                <label for="state" class="form-label">Estado</label>
+                <input type="text" class="form-control" id="state">
+              </div>
+              <div class="mb-3">
+                <label for="province" class="form-label">Município</label>
+                <input type="text" class="form-control" id="province">
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="age" class="form-label">Idade</label>
-              <input type="text" class="form-control" id="age">
-            </div>
-            <div class="mb-3">
-              <label for="profession" class="form-label">Profissão</label>
-              <input type="text" class="form-control" id="profession">
-            </div>
-            <div class="mb-3">
-              <label for="address" class="form-label">Endereço</label>
-              <input type="text" class="form-control" id="address">
-            </div>
-            <div class="mb-3">
-              <label for="state" class="form-label">Estado</label>
-              <input type="text" class="form-control" id="state">
-            </div>
-            <div class="mb-3">
-              <label for="province" class="form-label">Município</label>
-              <input type="text" class="form-control" id="province">
-            </div>
-            <button onClick="wellcome()" class="btn btn-primary mb-3">Gerar ficha</button>
           </div>
+          <button onClick="showCard()" class="btn btn-primary mt-3 mb-3">Cadastrar</button>
         </div>
-      </div>
-    `;
+      `;
+      app.innerHTML = formCadastro;
+    }
 
+    showForm();
 
-    function wellcome() {
+    function showCard() {
       const userName = document.querySelector('#name').value;
       const userAge = document.querySelector('#age').value;
       const userProfession = document.querySelector('#profession').value;
@@ -61,7 +66,7 @@
       const userState = document.querySelector('#state').value;
       const userProvince = document.querySelector('#province').value;
 
-      const wellcomeCard = `
+      const cardCadastro = `
         <div class="container">
           <div class="card mt-5">
             <div class="card-body">
@@ -73,10 +78,11 @@
               <p><b>Município:</b> ${userProvince}</p>
             </div>
           </div>
+          <button onClick="showForm()" class="btn btn-primary mt-3 mb-3">Novo cadastro</button>
         </div>
       `;
 
-        app.innerHTML = wellcomeCard;
+      app.innerHTML = cardCadastro;
     }
 
 </script>
