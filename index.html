@@ -10,6 +10,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
+  <style>
+    .full {
+      height: 100vh;
+      align-items: center;
+    }
+  </style>
+
   <title>Javascript</title>
 </head>
 
@@ -82,7 +89,18 @@
         </div>
       `;
 
-      app.innerHTML = cardCadastro;
+      const loading = `
+        <div class="d-flex justify-content-center full">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      `;
+      app.innerHTML = loading;
+
+      setTimeout(() => {
+        app.innerHTML = cardCadastro;
+      }, 2000);
     }
 
 </script>
